@@ -1,0 +1,165 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background: #282c33;
+  color: white;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 900px;
+  height: 100vh;
+}
+
+h1 {
+  display: flexbox;
+  align-items: left;
+  align-self: flex-start;
+  justify-content: left;
+  color: #FFF;
+  font-size: 60px;
+  font-family: Fira Code;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 35px;
+  padding: 306 63 689 844;
+}
+
+h2 {
+  margin-left: 35px;
+  margin-top: 45px;
+  margin-bottom: 5px;
+}
+
+#coin-input {
+  align-self: flex-start;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  width: 171px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: rgba(217, 217, 217, 0.10);
+  color: #FFF;
+}
+
+label {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  height: 60px;
+  justify-content: flex-start;
+}
+
+.label-id {
+  display: flex;
+  width: 111px;
+  height: 15px;
+  margin-left: 40px;
+  margin-bottom: 5px;
+  color: #FFF;
+  font-size: 12px;
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+input {
+  background: rgba(252, 252, 252, 0.87);
+  border-radius: 10px;
+  border: none;
+  width: 171px;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 20px;
+  margin-left: 35px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.411);
+}
+
+#coin-input {
+  border-radius: 10px;
+  border: none;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 20px;
+  margin-left: 35px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.search-btn {
+  background-color: #96eb95;
+  border: 8px solid #96eb95;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #373737fa;
+  margin-left: 15px;
+  width: 150px;
+  height: 42px;
+  cursor: pointer;
+  padding: auto;
+  font-family: Fira Code;
+  font-style: normal;
+  line-height: normal;
+}
+
+.search-btn:hover {
+  background-color: #65a372;
+}
+
+.coins {
+  padding: 0 20px;
+  list-style: none;
+  height: 500px;
+  align-self: stretch;
+  overflow-x: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.coins-section {
+  background: rgba(255, 255, 255, 0.06);
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.green {
+  #65a372
+}
+
+#sections-css {
+  width: 900px;
+  height: 583px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+li {
+  width: 150px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 15px 20px;
+}

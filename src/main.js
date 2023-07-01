@@ -1,3 +1,6 @@
+import Swall from 'sweetalert2';
+import './style.css';
+
 const searchBtn = document.querySelector('.search-btn');
 searchBtn.addEventListener('click', handleSearch);
 
@@ -10,15 +13,40 @@ function fetchAPI (coin) {
   const url = `https://api.exchangerate.host/latest?base=${coin}`
   return fetch(url)
   .then(response => response.json())
-  .then((data) => data.rates);
+  .then((data) => {
+    if(data.base !== coin.toUpperCase()) {
+      throw new Error("Moeda não existente!");
+    }
+    return data.rates;
+  });
 }
 
 function handleSearch () {
   const coin = inputCoin.value.toUpperCase();
 
+  if(!coin) {
+    Swall.fire({
+      icon: "error",
+      title: "Ops",
+      text: "Você precisa digitar um valor válido"
+    });
+    return;
+  }
+
   titleCoin.textContent = `Valores referentes a 1 ${coin}`;
+
   fetchAPI(coin)
-  .then(renderCoins);
+  .then(renderCoins)
+  .catch(error => {
+    titleCoin.textContent = '';
+    coinsList.innerHTML = '';
+    
+    Swall.fire({
+      icon: "error",
+      title: "Ops",
+      text: error.message
+    });
+  });
 }
 
 function renderCoins (coins) {
@@ -32,7 +60,7 @@ function renderCoins (coins) {
     // console.log('Value', coinValue);
 
     const li = document.createElement('li');
-    li.textContent = `${coinName} ${coinValue.toFixed(3)}`;
+    li.textContent = `${coinName}  ${coinValue.toFixed(3)}`;
     coinsList.appendChild(li);
   })
 }
